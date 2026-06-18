@@ -1,0 +1,5 @@
+# Dependency directories
+node_modules/
+
+# Local configuration/logs (optional, but good to ignore if you want to keep settings local)
+#.vscode/

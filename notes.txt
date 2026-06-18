@@ -1,0 +1,38 @@
+rate vs trend for metrics
+counter
+
+  █ THRESHOLDS 
+
+    custom_login_success_rate
+    ✓ 'rate>0.95' rate=100.00%
+
+    custom_rating_duration_ms
+    ✓ 'p(95)<400' p(95)=262.31092
+
+    custom_registration_duration_ms
+    ✓ 'p(95)<400' p(95)=308.05521
+
+    http_req_failed
+    ✓ 'rate<0.05' rate=0.00%
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 84      5.614755/s
+    checks_succeeded...: 100.00% 84 out of 84
+    checks_failed......: 0.00%   0 out of 84
+
+    ✓ registration status is 200 or 201
+    ✓ login status is 200
+    ✓ login response has token
+    ✓ rating status is 201
+    ✓ rating response has id
+    ✓ get rating status is 200
+    ✓ retrieved rating ID matches
+
+    CUSTOM
+    custom_login_success_rate.........: 100.00% 12 out of 12
+    custom_pizza_ratings_total........: 12      0.802108/s
+    custom_rating_duration_ms.........: avg=250.034575 min=233.4562 med=249.9913  max=265.3082 p(90)=259.77429 p(95)=262.31092
+    custom_registration_duration_ms...: avg=300.013192 min=291.1019 med=300.34485 max=308.7349 p(90)=307.23981 p(95)=308.05521
+    custom_request_success_rate.......: 100.00% 48 out of 48
+    custom_user_registrations_total...: 12      0.802108/s

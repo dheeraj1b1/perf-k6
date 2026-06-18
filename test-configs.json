@@ -1,0 +1,77 @@
+{
+  "smoke": {
+    "projectID": 7765585,
+    "thresholds": {
+      "http_req_failed": ["rate<0.01"],
+      "http_req_duration": ["p(95)<500"],
+      "checks": ["rate>0.95"],
+      "browser_web_vital_cls": ["p(95)<0.1"],
+      "browser_web_vital_fcp": ["p(95)<2000"],
+      "browser_web_vital_inp": ["p(95)<200"],
+      "browser_web_vital_lcp": ["p(95)<2000"],
+      "browser_web_vital_ttfb": ["p(95)<1500"],
+      "custom_login_success_rate": ["rate>0.95"],
+      "custom_registration_duration_ms": ["p(95)<600"],
+      "custom_rating_duration_ms": ["p(95)<600"]
+    },
+    "scenarios": {
+      "ui": {
+        "executor": "shared-iterations",
+        "exec": "browserTest",
+        "vus": 1,
+        "maxDuration": "1m",
+        "iterations": 4,
+        "options": {
+          "browser": {
+            "type": "chromium"
+          }
+        }
+      },
+      "backEndStress": {
+        "executor": "constant-vus",
+        "exec": "backEndStress",
+        "vus": 1,
+        "duration": "1m"
+      }
+    }
+  },
+  "load": {
+    "projectID": 7765585,
+    "thresholds": {
+      "http_req_failed": ["rate<0.01"],
+      "http_req_duration": ["p(95)<500"],
+      "checks": ["rate>0.95"],
+      "browser_web_vital_cls": ["p(95)<0.1"],
+      "browser_web_vital_fcp": ["p(95)<2000"],
+      "browser_web_vital_inp": ["p(95)<250"],
+      "browser_web_vital_lcp": ["p(95)<2000"],
+      "browser_web_vital_ttfb": ["p(95)<1500"],
+      "custom_login_success_rate": ["rate>0.95"],
+      "custom_registration_duration_ms": ["p(95)<600"],
+      "custom_rating_duration_ms": ["p(95)<600"]
+    },
+    "scenarios": {
+      "ui": {
+        "executor": "constant-vus",
+        "exec": "browserTest",
+        "vus": 1,
+        "duration": "10m",
+        "options": {
+          "browser": {
+            "type": "chromium"
+          }
+        }
+      },
+      "backEndStress": {
+        "executor": "ramping-vus",
+        "exec": "backEndStress",
+        "startVUs": 0,
+        "stages": [
+          { "duration": "2m", "target": 10 },
+          { "duration": "6m", "target": 10 },
+          { "duration": "2m", "target": 0 }
+        ]
+      }
+    }
+  }
+}

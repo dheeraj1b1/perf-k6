@@ -1,0 +1,98 @@
+{
+  "editor.semanticHighlighting.enabled": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.wordWrap": "on",
+  "editor.renderWhitespace": "selection",
+  "editor.minimap.enabled": true,
+  "editor.tokenColorCustomizations": {
+    "comments": "#6A9955",
+    "functions": "#DCDCAA",
+    "keywords": "#C586C0",
+    "numbers": "#B5CEA8",
+    "strings": "#CE9178",
+    "types": "#4EC9B0",
+    "variables": "#9CDCFE",
+    "textMateRules": [
+      {
+        "scope": [
+          "variable.other.readwrite",
+          "variable.other.object",
+          "variable.other.property",
+          "variable.language.this"
+        ],
+        "settings": {
+          "foreground": "#9CDCFE"
+        }
+      },
+      {
+        "scope": [
+          "variable.parameter",
+          "variable.other.member"
+        ],
+        "settings": {
+          "foreground": "#9CDCFE",
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          "variable.other.constant",
+          "support.constant"
+        ],
+        "settings": {
+          "foreground": "#4FC1FF",
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": [
+          "entity.name.function",
+          "support.function"
+        ],
+        "settings": {
+          "foreground": "#DCDCAA"
+        }
+      },
+      {
+        "scope": [
+          "keyword.control",
+          "keyword.operator.new",
+          "storage.type"
+        ],
+        "settings": {
+          "foreground": "#C586C0"
+        }
+      },
+      {
+        "scope": [
+          "entity.name.type",
+          "support.type",
+          "support.class"
+        ],
+        "settings": {
+          "foreground": "#4EC9B0"
+        }
+      }
+    ]
+  },
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true,
+    "rules": {
+      "variable": "#9CDCFE",
+      "variable.readonly": {
+        "foreground": "#4FC1FF",
+        "fontStyle": "bold"
+      },
+      "parameter": {
+        "foreground": "#9CDCFE",
+        "fontStyle": "italic"
+      },
+      "function": "#DCDCAA",
+      "method": "#DCDCAA",
+      "property": "#9CDCFE",
+      "class": "#4EC9B0",
+      "type": "#4EC9B0"
+    }
+  }
+}
