@@ -13,7 +13,7 @@ import { Trend, Counter, Rate } from 'k6/metrics';
  * Or for cloud execution:
  *   k6 cloud -e TEST_TYPE=load cloudTest.js
  */
-const configsObj = JSON.parse(open('./test-configs.json'));
+const configsObj = JSON.parse(open('../test-configs.json'));
 
 function getTestConfig() {
     // Default to 'smoke' profile if no TEST_TYPE environment variable is provided
